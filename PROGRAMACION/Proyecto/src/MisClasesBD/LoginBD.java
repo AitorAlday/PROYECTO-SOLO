@@ -64,28 +64,30 @@ public class LoginBD {
         }
     }
     
-    public static void crearLogin (String nombre, String apeuno, String apedos,String dni) {
-        //Cada vez que creamos a un trabajador, creamos un login para este. Se compone de su primera letra del nombre y su apellido.
-        //En caso de que el usuario exista tambien usaremos su segundo apellido
+    public static void crearLogin (String nombre, Integer tipo, Integer id) {
+        //Cada vez que creamos a un trabajador, creamos un login para este. Se compone de su primera letra del nombre y su tipo.
+        //En caso de que el usuario exista tambien usaremos su primer caracter del id.
         try {
-            String cadena = nombre.charAt(0)+apeuno;
+            String cadena = nombre.charAt(0) + tipo.toString();
             gbd = new GenericoBD();
             Statement sentencia = gbd.abrirConexion().createStatement();
             ResultSet resultado = sentencia.executeQuery("select * from Login");
             while (resultado.next()) {
                 if (cadena.equalsIgnoreCase(resultado.getString("usuario")))
-                    cadena = cadena+apedos;
+                    cadena = cadena+ id.toString().charAt(0);
             }
             PreparedStatement ps = gbd.abrirConexion().prepareStatement("insert into login values (?,?,?)");
-            ps.setString(1, dni);
+            ps.setInt(1, id);
             ps.setString(2, cadena);
             ps.setString(3, cadena);
             ps.executeUpdate();
-            Proyecto.toVAdministracion("Login generado.\n Usuario :"+cadena+"\nContraseña: "+cadena);
+            
+            Proyecto.toVPersona("Login generado.\n Usuario :"+cadena+"\nContraseña: "+cadena);
+            
             gbd.cerrarConexion();
         } 
         catch (Exception e) {
-            Proyecto.toVAdministracion("Problemas en crearLogin, en LoginBD: " + e.getMessage());
+            Proyecto.toVPersona("Problemas en crearLogin, en LoginBD: " + e.getMessage());
         }
     }
     
@@ -98,7 +100,7 @@ public class LoginBD {
             gbd.cerrarConexion();
         } 
         catch (Exception e) {
-            Proyecto.toVAdministracion("Problemas en borrarLogin, en LoginBD: " + e.getMessage());
+            Proyecto.toVPersona("Problemas en borrarLogin, en LoginBD: " + e.getMessage());
         }
     }
     
@@ -111,10 +113,10 @@ public class LoginBD {
             ps.setString(3, dni);
             ps.executeUpdate();
             gbd.cerrarConexion();
-            Proyecto.toVAdministracion("Login actualizado");
+            Proyecto.toVPersona("Login actualizado");
         } 
         catch (Exception e) {
-            Proyecto.toVAdministracion("Problemas en modificarLogin, en LoginBD: " + e.getMessage());
+            Proyecto.toVPersona("Problemas en modificarLogin, en LoginBD: " + e.getMessage());
         }
     }
 }

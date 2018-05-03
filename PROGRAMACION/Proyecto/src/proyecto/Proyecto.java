@@ -109,9 +109,13 @@ public class Proyecto {
     
     // <editor-fold defaultstate="collapsed" desc="Para administracion">
     public static void insertarPersona(Integer idPersona, String nombre, Integer tipo, String usuario, String contraseña, Equipo e) {
-        Persona p = new Persona(idPersona, nombre, tipo, usuario, contraseña, e);
+        Persona p = new Persona(idPersona, nombre, tipo, e);
         PersonaBD.insertarPersona(p, tipo);
-        PersonaBD.crearLogin(nombre, tipo, idPersona);
+        LoginBD.crearLogin(nombre, tipo, idPersona);
+    }
+    
+    public static void toVPersona(String mensaje) {
+        vPer.mostrarMensaje(mensaje);
     }
     // </editor-fold>
     

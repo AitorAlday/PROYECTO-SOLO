@@ -25,6 +25,7 @@ public class PersonaBD {
             sentencia.setInt(1, p.getIdPersona());
             sentencia.setString(2, p.getNombre());
             sentencia.setInt(3, p.getTipo());
+            sentencia.executeUpdate();
             
             gbd.cerrarConexion();
         }
@@ -40,6 +41,7 @@ public class PersonaBD {
             sentencia.setInt(1, p.getIdPersona());
             sentencia.setString(2, p.getNombre());
             sentencia.setInt(3, p.getTipo());
+            sentencia.executeUpdate();
             
             gbd.cerrarConexion();
         }
