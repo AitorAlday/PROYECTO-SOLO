@@ -68,19 +68,19 @@ public class Proyecto {
     
     // <editor-fold defaultstate="collapsed" desc="Cerrar ventanas">
     public static void cerrarPersona(){
-        
+        vPer.dispose();
     }
     
     public static void cerrarJugador(){
-        
+        vJ.dispose();
     }
     
     public static void cerrarEquipos(){
-        
+        vE.dispose();
     }
     
     public static void cerrarPrincipal(){
-        
+        vP.dispose();
     }
     // </editor-fold>
     

@@ -90,13 +90,13 @@ public class PersonaBD {
         //Cada vez que creamos a una parsona, creamos un login para este. Se compone de su primera letra del nombre y su tipo.
         //En caso de que el usuario exista tambien usaremos su primer numero del id
         try {
-            String cadena = nombre.charAt(0)+ tipo;
+            String cadena = nombre.charAt(0)+ tipo.toString();
             gbd = new GenericoBD();
             Statement sentencia = gbd.abrirConexion().createStatement();
             ResultSet resultado = sentencia.executeQuery("select * from Personas");
             while (resultado.next()) {
                 if (cadena.equalsIgnoreCase(resultado.getString("usuario")))
-                    cadena = cadena;//+ idPersona.charAt(0);
+                    cadena = cadena + idPersona.toString().charAt(0);
             }
             PreparedStatement ps = gbd.abrirConexion().prepareStatement("insert into login values (?,?,?)");
             ps.setInt(1, idPersona);
@@ -107,7 +107,7 @@ public class PersonaBD {
             gbd.cerrarConexion();
         } 
         catch (Exception e) {
-            Proyecto.toVAdministracion("Problemas en crearLogin, en LoginBD: " + e.getMessage());
+            Proyecto.toVAdministracion("Problemas en crearLogin, en PersonaBD: " + e.getMessage());
         }
     }
     

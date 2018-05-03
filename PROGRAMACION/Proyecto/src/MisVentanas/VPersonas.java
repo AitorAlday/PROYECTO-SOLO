@@ -11,9 +11,7 @@ package MisVentanas;
  */
 public class VPersonas extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VPersonas
-     */
+    
     public VPersonas() {
         initComponents();
     }
@@ -139,11 +137,11 @@ public class VPersonas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
