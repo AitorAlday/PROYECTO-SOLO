@@ -108,7 +108,7 @@ public class Proyecto {
     // </editor-fold>
     
     // <editor-fold defaultstate="collapsed" desc="Para administracion">
-    public static void insertarPersona(Integer idPersona, String nombre, Integer tipo, String usuario, String contraseña, Equipo e) {
+    public static void insertarPersona(Integer idPersona, String nombre, Integer tipo, String usuario, String contraseña, Equipo e) throws Exception{
         Persona p = new Persona(idPersona, nombre, tipo, e);
         PersonaBD.insertarPersona(p, tipo);
         LoginBD.crearLogin(nombre, tipo, idPersona);
