@@ -269,7 +269,7 @@ public class VPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cbmJBorrarActionPerformed
 
     private void cbmENuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmENuevoActionPerformed
-        proyecto.Proyecto.abrirEquipos();
+        proyecto.Proyecto.abrirEquipos('c');
     }//GEN-LAST:event_cbmENuevoActionPerformed
 
     private void cbmPerNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmPerNuevoActionPerformed
@@ -289,11 +289,11 @@ public class VPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cbmJModificarActionPerformed
 
     private void cbmEBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmEBorrarActionPerformed
-        proyecto.Proyecto.abrirEquipos();
+        proyecto.Proyecto.abrirEquipos('b');
     }//GEN-LAST:event_cbmEBorrarActionPerformed
 
     private void cbmEModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmEModificarActionPerformed
-        proyecto.Proyecto.abrirEquipos();
+        proyecto.Proyecto.abrirEquipos('e');
     }//GEN-LAST:event_cbmEModificarActionPerformed
 
     private void cbmCNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmCNuevoActionPerformed

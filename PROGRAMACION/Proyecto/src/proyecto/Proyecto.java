@@ -58,6 +58,11 @@ public class Proyecto {
         vE.setVisible(true);
         vE.setLocationRelativeTo(null);
     }
+    public static void abrirEquipos(char opt){
+        vE = new VEquipos(opt);
+        vE.setVisible(true);
+        vE.setLocationRelativeTo(null);
+    }
     
     public static void abrirPrincipal(){
         vP = new VPrincipal();
